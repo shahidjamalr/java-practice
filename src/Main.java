@@ -1,12 +1,16 @@
 public class Main {
     public static void main(String[] args) {
-        int[] nums = {1,2,3,4,5,6};
-        int[] rev = new int[nums.length];
-        for (int i = 0; i < nums.length; i++) {
-            rev[i] = nums[nums.length - 1 - i];
+        int[][] grid  = {
+                {23, 4, 32},
+                {12, 34, 11},
+                {23, 45, 109}
+        };
+        int max = grid[0][0];
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[i].length; j++) {
+                if (grid[i][j] > max) max = grid[i][j];
+            }
         }
-        for (int i = 0; i < rev.length; i++) {
-            System.out.print(rev[i] + " ");
-        }
+        System.out.println(max);
     }
 }
